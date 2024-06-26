@@ -24,3 +24,37 @@ menuIcon.addEventListener("click", () => {
     flag = 0;
   }
 });
+
+let tl = gsap.timeline();
+
+tl.from("#page-1 h1", {
+  y: 60,
+  opacity: 0,
+  duration: 1,
+})
+  .from("#page-1 h2", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    delay: "-0.8",
+  })
+  .from("#page-1 #floatng-text", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    delay: "-0.2",
+  });
+
+gsap.to("page-2 img", {
+  scale: 1,
+  // width: "100%",
+  duration: 1,
+
+  scrollTrigger: {
+    trigger: "#page-2 img",
+    scroller: "body",
+    markers: true,
+    start: "top 60%",
+    //   scrub: 2,
+  },
+});

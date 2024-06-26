@@ -12,7 +12,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Montserrat";
+  font-family: "attila";
   color: #d1d1d1;
 }
 
@@ -21,7 +21,6 @@ body {
   height: 100%;
   width: 100%;
   /* color: #fff */
-  cursor: pointer;
 }
 
 #main {
@@ -41,6 +40,7 @@ body {
   padding: 6.5rem 4.5rem;
   color: #2b2b2b;
   transition: all ease-in-out 1s;
+  cursor: pointer;
 }
 
 #top-menu > h1 {
@@ -81,13 +81,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3.125rem;
+  padding: 0 4.8rem;
   z-index: 1;
+  cursor: pointer;
 }
 
 #nav-options {
   display: flex;
   align-items: center;
+}
+
+#nav-bar h1 {
+  letter-spacing: 7px;
+  font-size: 1rem;
+  cursor: default;
 }
 
 #nav-options i {
@@ -96,11 +103,41 @@ body {
 
 #nav-options h2 {
   text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: default;
 }
 
 #nav-bar #brand-name {
   text-transform: uppercase;
 }
 
-#nav-options i {
+#page-1 {
+  width: 100vw;
+  height: 100vh;
+  padding: 7.5rem 4.5rem;
+  background-color: #232025;
+  position: relative;
+}
+
+#page-1 h1 {
+  font-family: "attila";
+  font-size: 12rem;
+  letter-spacing: 0.8rem;
+}
+#page-1 h2 {
+  font-size: 2.5rem;
+  margin: 5rem 0 0 15rem;
+  opacity: 0.7;
+}
+
+#floatng-text {
+  width: 10%;
+  position: absolute;
+  bottom: 35%;
+  right: 18%;
+}
+
+#floatng-text h5 {
+  line-height: 15px;
+  opacity: 0.7;
 }

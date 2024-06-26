@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Montserrat";
-  src: url(./Montserrat-Medium.ttf);
+  src: url(./fonts/Montserrat-Medium.ttf);
 }
 
 @font-face {
   font-family: "attila";
-  src: url(./attila.ttf);
+  src: url(./fonts/attila.ttf);
 }
 
 * {
@@ -21,13 +21,14 @@ body {
   height: 100%;
   width: 100%;
   /* color: #fff */
+  overflow-x: hidden;
+  background-color: #232025;
 }
 
 #main {
   /* height: 100%;
   width: 100%; */
   /* background-color: #232025; */
-  background-color: black;
   position: relative;
 }
 
@@ -113,7 +114,7 @@ body {
 
 #page-1 {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 7.5rem 4.5rem;
   background-color: #232025;
   position: relative;
@@ -126,7 +127,7 @@ body {
 }
 #page-1 h2 {
   font-size: 2.5rem;
-  margin: 5rem 0 0 15rem;
+  margin: 4.5rem 0 0 15rem;
   opacity: 0.7;
 }
 
@@ -140,4 +141,12 @@ body {
 #floatng-text h5 {
   line-height: 15px;
   opacity: 0.7;
+}
+
+#page-1 img {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.9);
 }

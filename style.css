@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: #dadada;
+}
+
+#nav-bar {
+  width: 100%;
+  background-color: #222;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.125rem;
+}
+
+#nav-options {
+  display: flex;
+  align-items: center;
+}
+
+#nav-options i {
+  margin-left: 3.125rem;
+}
+
+#nav-options h2 {
+  text-transform: uppercase;
+}
+
+#nav-bar #brand-name {
+  text-transform: uppercase;
+}

@@ -15,7 +15,7 @@ menuIcon.addEventListener("click", () => {
 
     flag = 1;
   } else {
-    topMenu.style.top = "-100%";
+    topMenu.style.top = "-100vh";
 
     h1.style.color = "#dadada";
     h2.style.color = "#dadada";

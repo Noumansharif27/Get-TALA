@@ -1,4 +1,7 @@
 let menuIcon = document.querySelector("#icon");
+let line1 = document.querySelector("#icon #line-1");
+let line2 = document.querySelector("#icon #line-2");
+
 let topMenu = document.querySelector("#top-menu");
 let h1 = document.querySelector("#nav-bar h1");
 let h2 = document.querySelector("#nav-options h2");
@@ -9,9 +12,25 @@ menuIcon.addEventListener("click", () => {
   if (flag == 0) {
     topMenu.style.top = "0%";
 
-    h1.style.color = "#2b2b2b";
+    h1.style.color = "#dadada";
     h2.style.color = "#2b2b2b";
-    menuIcon.style.backgroundColor = "#000";
+    line1.style.backgroundColor = "#2b2b2b";
+    line2.style.backgroundColor = "#2b2b2b";
+    line2.style.transformOrigin = "0% 50%";
+    line1.style.transformOrigin = "0% 50%";
+    line1.style.width = "70%";
+    // line1.style.ZIndex = "5";
+
+    line2.style.transform = "rotate(-40deg)";
+    line1.style.transform = "rotate(40deg)";
+    menuIcon.style.justifyContent = "sapce-evnely";
+
+    // line1.style.backgroundColor = `#232025`;
+    // line2.style.backgroundColor = `#232025`;
+    // line1.style.transform = `rotate(40deg)`;
+    // line1.style.width = `70%`;
+    // line2.style.transform = `rotate(-40deg)`;
+    // line2.style.backgroundColor = `#232025`;
 
     flag = 1;
   } else {
@@ -19,7 +38,12 @@ menuIcon.addEventListener("click", () => {
 
     h1.style.color = "#dadada";
     h2.style.color = "#dadada";
-    menuIcon.style.color = "#dadada";
+    // line1.style.width = "100%";
+    line1.style.backgroundColor = "#cecece";
+    line2.style.backgroundColor = "#cecece";
+    line2.style.transform = "rotate(00deg)";
+    line1.style.transform = "rotate(-0deg)";
+    menuIcon.style.justifyContent = "sapce-between";
 
     flag = 0;
   }

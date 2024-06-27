@@ -115,17 +115,17 @@ body {
   height: 1rem;
   /* background-color: red; */
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 #nav-options #icon #line-1 {
-  width: 1.9rem;
+  width: 2rem;
   height: 0.125rem;
   background-color: #d1d1d1;
 }
 
 #nav-options #icon #line-2 {
-  width: 1.2rem;
+  width: 1.5rem;
   height: 0.125rem;
   background-color: #d1d1d1;
 }

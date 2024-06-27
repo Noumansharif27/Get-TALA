@@ -65,9 +65,9 @@ tl.from("#page-1 h1", {
     scrollTrigger: {
       trigger: "#page-2 h1",
       scrollar: "body",
-      markers: true,
-      scrub: true,
-      start: "top 80%",
-      end: "top 40%",
+      // markers: true,
+      scrub: 2,
+      start: "top 60%",
+      end: "top 50%",
     },
   });

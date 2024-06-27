@@ -58,7 +58,7 @@ body {
   font-size: 11rem;
   font-weight: 900;
   font-family: attila;
-  letter-spacing: 1;
+  letter-spacing: -15px;
 }
 
 #menu-items {
@@ -71,7 +71,7 @@ body {
 #menu-items h1 {
   font-size: 1.5rem;
   color: #2b2b2b;
-  font-weight: 100;
+  /* font-weight: 100; */
   line-height: 2.8rem;
   margin-left: 0.5rem;
 }
@@ -94,7 +94,7 @@ body {
   padding: 0 4.8rem;
   z-index: 1;
   cursor: pointer;
-  transition: all ease-in-out 1s;
+  transition: all ease-in 1.5s;
 }
 
 #nav-options {
@@ -189,4 +189,43 @@ body {
 #page-3 {
   width: 100vw;
   height: 100vh;
+}
+
+#page-4 {
+  height: 85vh;
+  width: 100vw;
+  /* background-color: firebrick;  */
+}
+
+#page-4 > h1 {
+  font-size: 7rem;
+  line-height: 4.7rem;
+  margin: 3.125rem 0 5rem 3.5rem;
+}
+
+#page-4 #table-content {
+  display: flex;
+  justify-content: space-between;
+  height: 11.5rem;
+  width: 100%;
+  /* border: 1px solid #cecece; */
+  /* align-items: center; */
+}
+
+#page-4 #table-content h1 {
+  font-size: 3rem;
+  line-height: 1.8rem;
+  padding: 2.8rem 0 0 3.125rem;
+  width: 70%;
+  border: 1px solid #cecece;
+  border-right: none;
+  border-left: none;
+}
+
+#page-4 #table-content h2 {
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  padding: 2.5rem 4rem 0 3.9rem;
+  width: 30%;
+  border: 1px solid #cecece;
 }

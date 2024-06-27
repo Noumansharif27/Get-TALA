@@ -30,31 +30,44 @@ let tl = gsap.timeline();
 tl.from("#page-1 h1", {
   y: 60,
   opacity: 0,
-  duration: 1,
+  duration: 1.5,
 })
   .from("#page-1 h2", {
     y: 60,
     opacity: 0,
-    duration: 1,
+    duration: 1.5,
     delay: "-0.8",
   })
   .from("#page-1 #floatng-text", {
     y: 60,
     opacity: 0,
     duration: 1,
-    delay: "-0.2",
+    delay: "-0.5",
+  })
+  .to("#page-2 img", {
+    scale: 1,
+    // width: "100%",
+
+    scrollTrigger: {
+      trigger: "#page-2 img",
+      scroller: "body",
+      // markers: true,
+      start: "top 80%",
+      end: "bottom 30%",
+      scrub: 3,
+    },
+  })
+  .from("#page-2 h1", {
+    rotateX: "-90deg",
+    // opacity: 0,
+    // duration: 0.5,
+    // delay: "-0.5",
+    scrollTrigger: {
+      trigger: "#page-2 h1",
+      scrollar: "body",
+      markers: true,
+      scrub: true,
+      start: "top 70%",
+      end: "bottom 40%",
+    },
   });
-
-gsap.to("page-2 img", {
-  scale: 1,
-  // width: "100%",
-  duration: 1,
-
-  scrollTrigger: {
-    trigger: "#page-2 img",
-    scroller: "body",
-    markers: true,
-    start: "top 60%",
-    //   scrub: 2,
-  },
-});

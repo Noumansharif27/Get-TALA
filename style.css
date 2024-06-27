@@ -192,9 +192,9 @@ body {
 }
 
 #page-4 {
-  height: 85vh;
+  height: 76vh;
   width: 100vw;
-  /* background-color: firebrick;  */
+  /* background-color: firebrick; */
 }
 
 #page-4 > h1 {
@@ -229,3 +229,38 @@ body {
   width: 30%;
   border: 1px solid #cecece;
 }
+
+#page-5 {
+  width: 100vw;
+  height: 80vh;
+  background-image: url(./assets/stars.gif);
+  /* background-position: center; */
+  /* background-size: cover; */
+  text-align: center;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page-5 h1 {
+  font-size: 3.5rem;
+  line-height: 2.5rem;
+}
+
+#page-5 h1 span {
+  font-family: dancing script;
+  font-size: 4.5rem;
+}
+
+#page-5 h2 {
+  font-size: 0.9 rem;
+  margin-top: 4rem;
+  text-align: left;
+}
+
+/* #page-5 img {
+  width: 3 0.125rem;
+  height: 3.125rem;
+  object-fit: cover;
+} */

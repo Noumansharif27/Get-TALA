@@ -58,8 +58,8 @@ tl.from("#page-1 h1", {
     },
   })
   .to("#page-2 h1", {
-    rotateX: 90,
-    // opacity: 0,
+    rotateX: 0,
+    opacity: 1,
     // duration: 0.5,
     // delay: "-0.5",
     scrollTrigger: {
@@ -67,7 +67,7 @@ tl.from("#page-1 h1", {
       scrollar: "body",
       markers: true,
       scrub: true,
-      start: "top 70%",
-      end: "bottom 40%",
+      start: "top 80%",
+      end: "top 40%",
     },
   });

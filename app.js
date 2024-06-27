@@ -1,4 +1,4 @@
-let menuIcon = document.querySelector("i");
+let menuIcon = document.querySelector("#icon");
 let topMenu = document.querySelector("#top-menu");
 let h1 = document.querySelector("#nav-bar h1");
 let h2 = document.querySelector("#nav-options h2");
@@ -11,7 +11,7 @@ menuIcon.addEventListener("click", () => {
 
     h1.style.color = "#2b2b2b";
     h2.style.color = "#2b2b2b";
-    menuIcon.style.color = "#2b2b2b";
+    menuIcon.style.backgroundColor = "#000";
 
     flag = 1;
   } else {

@@ -94,4 +94,30 @@ tl.from("#page-1 h1", {
       start: "top 60%",
       end: "top 50%",
     },
+  })
+  .to("#slider-text .text-1", {
+    x: "-80",
+    duration: 1,
+    delay: "0.1",
+    scrollTrigger: {
+      trigger: "#page-5",
+      scrollar: "body",
+      markers: true,
+      scrub: 2,
+      start: "top 60%",
+      end: "top 50%",
+    },
+  })
+  .to("#slider-text .text-2", {
+    x: "100",
+    duration: 1,
+    delay: "0.1",
+    scrollTrigger: {
+      trigger: "#page-6 #slider-text",
+      scrollar: "body",
+      markers: true,
+      scrub: 3,
+      start: "top 60%",
+      end: "top 50%",
+    },
   });

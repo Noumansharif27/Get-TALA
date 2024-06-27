@@ -57,8 +57,8 @@ tl.from("#page-1 h1", {
       scrub: 3,
     },
   })
-  .from("#page-2 h1", {
-    rotateX: "-90deg",
+  .to("#page-2 h1", {
+    rotateX: 90,
     // opacity: 0,
     // duration: 0.5,
     // delay: "-0.5",

@@ -88,36 +88,60 @@ tl.from("#page-1 h1", {
     // delay: "-0.5",
     scrollTrigger: {
       trigger: "#page-2 h1",
-      scrollar: "body",
+      scroller: "body",
       // markers: true,
       scrub: 2,
       start: "top 60%",
       end: "top 50%",
     },
-  })
-  .to("#slider-text .text-1", {
-    x: "-80",
-    duration: 1,
-    delay: "0.1",
+  });
+// .to("#page-6 .text-1", {
+//   x: "-80",
+//   duration: 1,
+//   delay: "0.1",
+//   scrollTrigger: {
+//     trigger: "#page-6",
+//     scrollar: "body",
+//     markers: true,
+//     // start: "top 10%",
+//     // end: "top 10%",
+//     scrub: 3,
+//   },
+// });
+
+let textH1 = document.querySelectorAll("#page-6 .text-1 h1");
+textH1.forEach(function (elem) {
+  gsap.to("elem", {
+    transform: "translateX(-96%)",
+
+    duration: 4,
+    // delay: "0.1",
     scrollTrigger: {
-      trigger: "#page-5",
-      scrollar: "body",
-      markers: true,
-      scrub: 2,
-      start: "top 60%",
-      end: "top 50%",
-    },
-  })
-  .to("#slider-text .text-2", {
-    x: "100",
-    duration: 1,
-    delay: "0.1",
-    scrollTrigger: {
-      trigger: "#page-6 #slider-text",
-      scrollar: "body",
+      trigger: "#page-6",
+      scroller: "#main",
       markers: true,
       scrub: 3,
-      start: "top 60%",
-      end: "top 50%",
+      start: "top top",
+      end: "bottom bottom",
     },
   });
+});
+
+let textH2 = document.querySelectorAll("#page-6 .text-2 h1");
+textH1.forEach(function (elem) {
+  gsap.to("elem", {
+    transform: "translateX(0%)",
+
+    duration: 4,
+    ease: "linear",
+    // delay: "0.1",
+    scrollTrigger: {
+      trigger: "#page-6",
+      scroller: "#main",
+      markers: true,
+      // start: "top 10%",
+      // end: "top 10%",
+      scrub: 3,
+    },
+  });
+});

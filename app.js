@@ -12,18 +12,23 @@ menuIcon.addEventListener("click", () => {
   if (flag == 0) {
     topMenu.style.top = "0%";
 
-    h1.style.color = "#dadada";
+    h1.style.color = "#2b2b2b";
     h2.style.color = "#2b2b2b";
     line1.style.backgroundColor = "#2b2b2b";
     line2.style.backgroundColor = "#2b2b2b";
-    line2.style.transformOrigin = "0% 50%";
-    line1.style.transformOrigin = "0% 50%";
-    line1.style.width = "70%";
+    // line2.style.transformOrigin = "0% 50%";
+    // line1.style.transformOrigin = "0% 50%";
+    line1.style.width = "1.3rem";
+    line2.style.width = "1.3rem";
+
     // line1.style.ZIndex = "5";
 
-    line2.style.transform = "rotate(-40deg)";
-    line1.style.transform = "rotate(40deg)";
+    line2.style.transform = "rotate(-45deg)";
+    line1.style.transform = "rotate(45deg)";
     menuIcon.style.justifyContent = "sapce-evnely";
+    menuIcon.style.display = "block";
+
+    // line2.style.paddingTop = "1vh";
 
     // line1.style.backgroundColor = `#232025`;
     // line2.style.backgroundColor = `#232025`;
@@ -38,11 +43,17 @@ menuIcon.addEventListener("click", () => {
 
     h1.style.color = "#dadada";
     h2.style.color = "#dadada";
+
+    line2.style.width = "3vh";
+    line1.style.width = "1.75rem";
+
     // line1.style.width = "100%";
     line1.style.backgroundColor = "#cecece";
     line2.style.backgroundColor = "#cecece";
     line2.style.transform = "rotate(00deg)";
-    line1.style.transform = "rotate(-0deg)";
+    line1.style.transform = "rotate(00deg)";
+    menuIcon.style.display = "flex";
+    menuIcon.style.flexDirection = "column";
     menuIcon.style.justifyContent = "sapce-between";
 
     flag = 0;
@@ -65,8 +76,8 @@ tl.from("#page-1 h1", {
   .from("#page-1 #floatng-text", {
     y: 60,
     opacity: 0,
-    duration: 1,
-    delay: "-0.5",
+    duration: 0.8,
+    delay: "-0.8",
   })
   .to("#page-2 img", {
     scale: 1,
@@ -109,7 +120,7 @@ tl.from("#page-1 h1", {
 //   },
 // });
 
-let textH1 = document.querySelectorAll("#page-6 .text-1 h1");
+let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
 textH1.forEach(function (elem) {
   gsap.to("elem", {
     transform: "translateX(-96%)",
@@ -119,6 +130,7 @@ textH1.forEach(function (elem) {
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "#main",
+
       markers: true,
       scrub: 3,
       start: "top top",
@@ -127,7 +139,7 @@ textH1.forEach(function (elem) {
   });
 });
 
-let textH2 = document.querySelectorAll("#page-6 .text-2 h1");
+let textH2 = document.querySelectorAll(".scroll-text-2 span");
 textH1.forEach(function (elem) {
   gsap.to("elem", {
     transform: "translateX(0%)",

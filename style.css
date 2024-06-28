@@ -119,13 +119,13 @@ body {
 }
 
 #nav-options #icon #line-1 {
-  width: 2rem;
+  width: 1.75rem;
   height: 0.125rem;
   background-color: #d1d1d1;
 }
 
 #nav-options #icon #line-2 {
-  width: 1.5rem;
+  width: 3vh;
   height: 0.125rem;
   background-color: #d1d1d1;
 }
@@ -289,32 +289,29 @@ body {
 }
 
 #page-6 h1 {
-  font-size: 10rem;
-  line-height: 8rem;
-  overflow: hidden;
+  font-size: 11rem;
   overflow-x: auto;
+  /* transform: translateX(-100%); */
+  overflow-y: hidden;
+  max-width: 100%;
+  line-height: 9rem;
+  cursor: default;
 }
 
 #page-6 h1::-webkit-scrollbar {
   display: none;
 }
 
-#page-6 h1 span {
+.scroll-text-1 .one-2 {
   color: transparent;
-  -webkit-text-stroke: 1px #d1d1d1;
+  -webkit-text-stroke: 1px rgba(209, 209, 209, 0.8);
 }
 
-.text-1 h1 {
-  overflow-x: auto;
+.scroll-text-2 .one-1 {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(209, 209, 209, 0.8);
 }
 
-.text-2 h1 {
+.scroll-text-2 h1 {
   transform: translateX(-100%);
-  /* overflow: hidden;
-  overflow-x: auto; */
-}
-
-#page-7 {
-  height: 100vh;
-  width: 100vw;
 }

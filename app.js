@@ -120,40 +120,77 @@ tl.from("#page-1 h1", {
 //   },
 // });
 
+// let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
+// textH1.forEach(function (elem) {
+//   gsap.to("elem", {
+//     transform: "translateX(-96%)",
+
+//     duration: 4,
+//     // delay: "0.1",
+//     scrollTrigger: {
+//       trigger: "#page-6",
+//       scroller: "#main",
+
+//       markers: true,
+//       scrub: 3,
+//       start: "top top",
+//       end: "bottom bottom",
+//     },
+//   });
+// });
+
+// let textH2 = document.querySelectorAll(".scroll-text-2 span");
+// textH1.forEach(function (elem) {
+//   gsap.to("elem", {
+//     transform: "translateX(0%)",
+
+//     duration: 4,
+//     ease: "linear",
+//     // delay: "0.1",
+//     scrollTrigger: {
+//       trigger: "#page-6",
+//       scroller: "#main",
+//       markers: true,
+//       // start: "top 10%",
+//       // end: "top 10%",
+//       scrub: 3,
+//     },
+//   });
+// });
+
+let body = document.querySelector("body");
+
 let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
 textH1.forEach(function (elem) {
-  gsap.to("elem", {
+  gsap.to(elem, {
     transform: "translateX(-96%)",
-
-    duration: 4,
-    // delay: "0.1",
+    duration: 5,
     scrollTrigger: {
-      trigger: "#page-6",
-      scroller: "#main",
-
+      trigger: "#page-6 .scrolltext-1",
+      scroller: "body", // Assuming this is the scrollable element
       markers: true,
-      scrub: 3,
-      start: "top top",
-      end: "bottom bottom",
+      scrub: 2,
+      // start: "top top",
+      // end: "bottom bottom",
     },
   });
 });
 
-let textH2 = document.querySelectorAll(".scroll-text-2 span");
-textH1.forEach(function (elem) {
-  gsap.to("elem", {
-    transform: "translateX(0%)",
-
+// Animation for second line elements (adjust selector if needed)
+let textH2 = document.querySelectorAll(".scroll-text-2 h1");
+textH2.forEach(function (elem) {
+  gsap.to(elem, {
+    transform: "translateX(100%)",
     duration: 4,
     ease: "linear",
-    // delay: "0.1",
     scrollTrigger: {
       trigger: "#page-6",
-      scroller: "#main",
+      scroller: "body", // Assuming this is the scrollable element
       markers: true,
-      // start: "top 10%",
-      // end: "top 10%",
-      scrub: 3,
+      scrub: 2,
+      // start: "top top",
+      // end: "bottom bottom",
+      // Adjust start and end points if needed
     },
   });
 });

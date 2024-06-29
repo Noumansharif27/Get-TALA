@@ -58,26 +58,13 @@ menuIcon.addEventListener("click", () => {
     h2.style.color = "#2b2b2b";
     line1.style.backgroundColor = "#2b2b2b";
     line2.style.backgroundColor = "#2b2b2b";
-    // line2.style.transformOrigin = "0% 50%";
-    // line1.style.transformOrigin = "0% 50%";
     line1.style.width = "1.3rem";
     line2.style.width = "1.3rem";
-
-    // line1.style.ZIndex = "5";
 
     line2.style.transform = "rotate(-45deg)";
     line1.style.transform = "rotate(45deg)";
     menuIcon.style.justifyContent = "sapce-evnely";
     menuIcon.style.display = "block";
-
-    // line2.style.paddingTop = "1vh";
-
-    // line1.style.backgroundColor = `#232025`;
-    // line2.style.backgroundColor = `#232025`;
-    // line1.style.transform = `rotate(40deg)`;
-    // line1.style.width = `70%`;
-    // line2.style.transform = `rotate(-40deg)`;
-    // line2.style.backgroundColor = `#232025`;
 
     flag = 1;
   } else {
@@ -89,7 +76,6 @@ menuIcon.addEventListener("click", () => {
     line2.style.width = "3vh";
     line1.style.width = "1.75rem";
 
-    // line1.style.width = "100%";
     line1.style.backgroundColor = "#cecece";
     line2.style.backgroundColor = "#cecece";
     line2.style.transform = "rotate(00deg)";
@@ -148,59 +134,10 @@ tl.from("#page-1 h1", {
       end: "top 50%",
     },
   });
-// .to("#page-6 .text-1", {
-//   x: "-80",
-//   duration: 1,
-//   delay: "0.1",
-//   scrollTrigger: {
-//     trigger: "#page-6",
-//     scrollar: "#main",
-//     markers: true,
-//     // start: "top 10%",
-//     // end: "top 10%",
-//     scrub: 3,
-//   },
-// });
-
-// let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
-// textH1.forEach(function (elem) {
-//   gsap.to("elem", {
-//     transform: "translateX(-96%)",
-
-//     duration: 4,
-//     // delay: "0.1",
-//     scrollTrigger: {
-//       trigger: "#page-6",
-//       scroller: "#main",
-
-//       markers: true,
-//       scrub: 3,
-//       start: "top top",
-//       end: "bottom bottom",
-//     },
-//   });
-// });
-
-// let textH2 = document.querySelectorAll(".scroll-text-2 span");
-// textH1.forEach(function (elem) {
-//   gsap.to("elem", {
-//     transform: "translateX(0%)",
-
-//     duration: 4,
-//     ease: "linear",
-//     // delay: "0.1",
-//     scrollTrigger: {
-//       trigger: "#page-6",
-//       scroller: "#main",
-//       markers: true,
-//       // start: "top 10%",
-//       // end: "top 10%",
-//       scrub: 3,
-//     },
-//   });
-// });
 
 let body = document.querySelector("body");
+
+// animating text to move from left to right respectively to the scroll
 
 let textH1 = document.querySelectorAll(".scroll-text-1 h1");
 textH1.forEach(function (elem) {
@@ -210,7 +147,7 @@ textH1.forEach(function (elem) {
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "#main", // Assuming this is the scrollable element
-      markers: true,
+      // markers: true,
       scrub: 3,
       start: "top 40%",
       end: "bottom 10%",
@@ -228,7 +165,7 @@ textH2.forEach(function (elem) {
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "#main", // Assuming this is the scrollable element
-      markers: true,
+      // markers: true,
       scrub: 3,
       start: "top 40%",
       end: "bottom 10%",
@@ -237,6 +174,7 @@ textH2.forEach(function (elem) {
   });
 });
 
+// animating the yes or no options with gif mouse move
 let yesEvent = document.querySelector("#yes");
 let bananaGif = document.querySelector("#yes img");
 

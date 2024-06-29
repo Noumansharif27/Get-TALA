@@ -193,7 +193,6 @@ let syrupGif = document.querySelector("#no img");
 
 noEvent.addEventListener("mousemove", (details) => {
   syrupGif.style.opacity = 1;
-  console.log("fuck me daddy");
   syrupGif.style.left = `${details.x - 790}px`;
   syrupGif.style.top = `${details.y - 390}px`;
 });
@@ -223,3 +222,86 @@ gsap.to("#line-div", {
     // end: "top top",
   },
 });
+
+// let fruitName = document.querySelectorAll("#page-3 > h2");
+// fruitName.addEventListener("mousemove", () => {
+//   alert("hi");
+// });
+
+let fruitName = document.querySelector(".fruit-name");
+
+fruitName.addEventListener("mousemove", (details) => {
+  gsap.to("#page-3 #mango-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    x: `${details.x - 90}`,
+    y: `${details.y - 300}`,
+    duration: 1.5,
+  });
+});
+
+fruitName.addEventListener("mouseleave", () => {
+  gsap.to("#page-3 #mango-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    duration: 0.5,
+  });
+});
+
+fruitName.addEventListener("mousemove", (details) => {
+  gsap.to("#page-3 #banana-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    x: `${details.x - 90}`,
+    y: `${details.y - 300}`,
+    duration: 1.5,
+  });
+});
+
+fruitName.addEventListener("mouseleave", () => {
+  gsap.to("#page-3 #banana-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    duration: 0.5,
+  });
+});
+
+fruitName.addEventListener("mousemove", (details) => {
+  gsap.to("#page-3 #pineapple-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    x: `${details.x - 90}`,
+    y: `${details.y - 300}`,
+    duration: 1.5,
+  });
+});
+
+fruitName.addEventListener("mouseleave", () => {
+  gsap.to("#page-3 #pineapple-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    duration: 0.5,
+  });
+});
+
+fruitName.addEventListener("mousemove", (details) => {
+  gsap.to("#page-3 #pithaya-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    x: `${details.x - 90}`,
+    y: `${details.y - 290}`,
+    duration: 1.5,
+  });
+});
+
+fruitName.addEventListener("mouseleave", () => {
+  gsap.to("#page-3 #pithaya-card", {
+    opacity: 1, // Adjust the properties as needed
+    ease: Expo.easeInOut,
+    duration: 0.5,
+  });
+});
+// gsap.to("#page-3 .card .fruit-name", {
+//   opacity: 1, // Adjust the properties as needed
+//   ease: Expo.easeInOut,
+// });

@@ -1,3 +1,45 @@
+function smoothScroll() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+  });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector("#main").style.transform
+      ? "transform"
+      : "fixed",
+  });
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
+}
+
+smoothScroll();
+
 let menuIcon = document.querySelector("#icon");
 let line1 = document.querySelector("#icon #line-1");
 let line2 = document.querySelector("#icon #line-2");
@@ -85,7 +127,7 @@ tl.from("#page-1 h1", {
 
     scrollTrigger: {
       trigger: "#page-2 img",
-      scroller: "body",
+      scroller: "#main",
       // markers: true,
       start: "top 80%",
       end: "bottom 30%",
@@ -99,7 +141,7 @@ tl.from("#page-1 h1", {
     // delay: "-0.5",
     scrollTrigger: {
       trigger: "#page-2 h1",
-      scroller: "body",
+      scroller: "#main",
       // markers: true,
       scrub: 2,
       start: "top 60%",
@@ -112,7 +154,7 @@ tl.from("#page-1 h1", {
 //   delay: "0.1",
 //   scrollTrigger: {
 //     trigger: "#page-6",
-//     scrollar: "body",
+//     scrollar: "#main",
 //     markers: true,
 //     // start: "top 10%",
 //     // end: "top 10%",
@@ -167,7 +209,7 @@ textH1.forEach(function (elem) {
     duration: 7,
     scrollTrigger: {
       trigger: "#page-6",
-      scroller: "body", // Assuming this is the scrollable element
+      scroller: "#main", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
       start: "top 40%",
@@ -185,7 +227,7 @@ textH2.forEach(function (elem) {
     ease: "linear",
     scrollTrigger: {
       trigger: "#page-6",
-      scroller: "body", // Assuming this is the scrollable element
+      scroller: "#main", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
       start: "top 40%",

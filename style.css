@@ -285,7 +285,7 @@ body {
 
 #page-6 {
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 #page-6 h1 {
@@ -296,17 +296,23 @@ body {
   /* width: 100%; */
   line-height: 9rem;
   cursor: default;
-  text-wrap: nowrap;
+  /* text-wrap: nowrap; */
+  white-space: nowrap;
 }
 
 #page-6 h1::-webkit-scrollbar {
   display: none;
 }
 
-/* .scroll-text-1 {
-  background-color: gold;
-  width: inherit;
-} */
+.scroll-text-1 {
+  /* background-color: gold; */
+  width: 500vw;
+}
+
+.scroll-text-2 {
+  /* background-color: black; */
+  width: 500vw;
+}
 
 .scroll-text-1 .one-2 {
   color: transparent;
@@ -318,6 +324,6 @@ body {
   -webkit-text-stroke: 1px rgba(209, 209, 209, 0.8);
 }
 
-.scroll-text-2 h1 {
-  transform: translateX(-100%);
+.scroll-text-2 {
+  transform: translateX(-50%);
 }

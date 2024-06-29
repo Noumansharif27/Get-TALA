@@ -180,7 +180,7 @@ let bananaGif = document.querySelector("#yes img");
 
 yesEvent.addEventListener("mousemove", (details) => {
   bananaGif.style.opacity = 1;
-  bananaGif.style.left = `${details.x - 190}px`;
+  bananaGif.style.left = `${details.x - 90}px`;
   bananaGif.style.top = `${details.y - 400}px`;
 });
 
@@ -194,10 +194,32 @@ let syrupGif = document.querySelector("#no img");
 noEvent.addEventListener("mousemove", (details) => {
   syrupGif.style.opacity = 1;
   console.log("fuck me daddy");
-  syrupGif.style.left = `${details.x - 850}px`;
+  syrupGif.style.left = `${details.x - 790}px`;
   syrupGif.style.top = `${details.y - 390}px`;
 });
 
 noEvent.addEventListener("mouseleave", () => {
   syrupGif.style.opacity = 0;
+});
+
+// animating the turbo-image
+gsap.to("#page-5 img", {
+  rotate: 360,
+  ease: "linear",
+  duration: 2,
+  repeat: -1, // Infinite the animation
+});
+
+gsap.to("#line-div", {
+  width: "85vw", // Target width
+  duration: 12, // Increased duration for slower animation
+  ease: Expo.inOut, // Easing function for smooth start and end
+  scrollTrigger: {
+    trigger: "#page-3 #line-div",
+    scroller: "#main",
+    markers: true, // Optional: Visualize trigger area (remove if not needed)
+    scrub: true, // Link animation progress to scrolling
+    // start: "top top",
+    // end: "top top",
+  },
 });

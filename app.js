@@ -163,15 +163,15 @@ let body = document.querySelector("body");
 let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
 textH1.forEach(function (elem) {
   gsap.to(elem, {
-    transform: "translateX(-70%)",
+    transform: "translateX(-50%)",
     duration: 4,
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "body", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
-      start: "top 50%",
-      end: "bottom 30%",
+      start: "top 10%",
+      end: "bottom 10%",
     },
   });
 });
@@ -180,7 +180,7 @@ textH1.forEach(function (elem) {
 let textH2 = document.querySelectorAll(".scroll-text-2 h1");
 textH2.forEach(function (elem) {
   gsap.to(elem, {
-    transform: "translateX(70%)",
+    transform: "translateX(50%)",
     duration: 4,
     ease: "linear",
     scrollTrigger: {
@@ -188,8 +188,8 @@ textH2.forEach(function (elem) {
       scroller: "body", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
-      start: "top 50%",
-      end: "bottom 30%",
+      start: "top 10%",
+      end: "bottom 10%",
       // Adjust start and end points if needed
     },
   });

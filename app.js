@@ -160,17 +160,17 @@ tl.from("#page-1 h1", {
 
 let body = document.querySelector("body");
 
-let textH1 = document.querySelectorAll("#page-6 .scroll-text-1 h1");
+let textH1 = document.querySelectorAll(".scroll-text-1 h1");
 textH1.forEach(function (elem) {
   gsap.to(elem, {
-    transform: "translateX(-50%)",
-    duration: 4,
+    transform: "translateX(-20%)",
+    duration: 7,
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "body", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
-      start: "top 10%",
+      start: "top 40%",
       end: "bottom 10%",
     },
   });
@@ -180,17 +180,44 @@ textH1.forEach(function (elem) {
 let textH2 = document.querySelectorAll(".scroll-text-2 h1");
 textH2.forEach(function (elem) {
   gsap.to(elem, {
-    transform: "translateX(50%)",
-    duration: 4,
+    transform: "translateX(20%)",
+    duration: 7,
     ease: "linear",
     scrollTrigger: {
       trigger: "#page-6",
       scroller: "body", // Assuming this is the scrollable element
       markers: true,
       scrub: 3,
-      start: "top 10%",
+      start: "top 40%",
       end: "bottom 10%",
       // Adjust start and end points if needed
     },
   });
+});
+
+let yesEvent = document.querySelector("#yes");
+let bananaGif = document.querySelector("#yes img");
+
+yesEvent.addEventListener("mousemove", (details) => {
+  bananaGif.style.opacity = 1;
+  bananaGif.style.left = `${details.x - 190}px`;
+  bananaGif.style.top = `${details.y - 400}px`;
+});
+
+yesEvent.addEventListener("mouseleave", () => {
+  bananaGif.style.opacity = 0;
+});
+
+let noEvent = document.querySelector("#no");
+let syrupGif = document.querySelector("#no img");
+
+noEvent.addEventListener("mousemove", (details) => {
+  syrupGif.style.opacity = 1;
+  console.log("fuck me daddy");
+  syrupGif.style.left = `${details.x - 850}px`;
+  syrupGif.style.top = `${details.y - 390}px`;
+});
+
+noEvent.addEventListener("mouseleave", () => {
+  syrupGif.style.opacity = 0;
 });

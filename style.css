@@ -350,7 +350,7 @@ body {
 
 #page-7 #options {
   width: 100%;
-  height: 50%;
+  height: 75%;
   /* background-color: goldenrod; */
   display: flex;
   align-items: center;
@@ -361,6 +361,8 @@ body {
 #page-7 #options h2 {
   font-size: 2.3rem;
   z-index: 5;
+  cursor: default;
+  pointer-events: none;
 }
 
 #page-7 #options #yes {
@@ -369,19 +371,61 @@ body {
   /* border: 1px solid #cecece; */
   text-align: center;
   /* align-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 #page-7 #options #no {
   width: 40%;
   height: 100%;
   /* border: 1px solid #cecece; */
-  text-align: center;
+  /* text-align: center; */
   /* align-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#page-7 #options #yes h2 {
+  position: relative;
+}
+
+#page-7 #options #no h2 {
+  position: relative;
+}
+
+#options #yes img {
+  width: 250px;
+  height: 29 0px;
+  /* object-fit: cover;
+  object-position: center; */
+
+  transform: rotate(20deg);
+  z-index: -1;
+  position: absolute;
+  left: 20%;
+  transform: translate(-50%, 0);
+  transform: rotate(15deg);
+  transition: opacity ease-in 0.2s;
+}
+
+#options #no img {
+  width: 250px;
+  height: 290px;
+  /* object-fit: cover;
+  object-position: center; */
+
+  z-index: -1;
+  position: absolute;
+  left: 20%;
+  transform: translate(-50%, 0);
+  transform: rotate(10deg);
+  transition: opacity ease-in 0.2s;
 }
 
 #options img {
-  width: 300px;
-  height: 320px;
-  transform: rotate(20deg);
-  z-index: -1;
+  opacity: 0;
 }

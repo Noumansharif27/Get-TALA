@@ -216,7 +216,6 @@ gsap.to("#line-div", {
   scrollTrigger: {
     trigger: "#page-3 #line-div",
     scroller: "#main",
-    markers: true, // Optional: Visualize trigger area (remove if not needed)
     scrub: true, // Link animation progress to scrolling
     // start: "top top",
     // end: "top top",
@@ -259,11 +258,7 @@ fruitName.addEventListener("mousemove", (details) => {
 });
 
 fruitName.addEventListener("mouseleave", () => {
-  gsap.to("#page-3 #banana-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    duration: 0.5,
-  });
+  document.querySelector(".banana-card").style.opacity = "0";
 });
 
 fruitName.addEventListener("mousemove", (details) => {

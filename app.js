@@ -222,81 +222,25 @@ gsap.to("#line-div", {
   },
 });
 
-// let fruitName = document.querySelectorAll("#page-3 > h2");
-// fruitName.addEventListener("mousemove", () => {
-//   alert("hi");
-// });
+const cardHovers = document.querySelectorAll(".card-hover");
 
-let fruitName = document.querySelector(".fruit-name");
+cardHovers.forEach((cardHover) => {
+  const fruitName = cardHover.querySelector(".fruit-name").textContent; // Get fruit name
+  const correspondingCard = document.getElementById(`${fruitName}-card`); // Find corresponding card
 
-fruitName.addEventListener("mousemove", (details) => {
-  gsap.to("#page-3 #mango-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    x: `${details.x - 90}`,
-    y: `${details.y - 300}`,
-    duration: 1.5,
+  cardHover.addEventListener("mousemove", (event) => {
+    // Calculate relative position within card-hover
+    const relativeX = event.clientX - cardHover.offsetLeft;
+    const relativeY = event.clientY - cardHover.offsetTop;
+
+    // Set corresponding card position based on cursor position
+    correspondingCard.style.opacity = 1; // Show the card
+    correspondingCard.style.transform = `translate(${relativeX - 190}px, ${
+      relativeY - 390
+    }px)`; // Follow cursor
+  });
+
+  cardHover.addEventListener("mouseleave", () => {
+    correspondingCard.style.opacity = 0; // Hide the card on leave
   });
 });
-
-fruitName.addEventListener("mouseleave", () => {
-  gsap.to("#page-3 #mango-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    duration: 0.5,
-  });
-});
-
-fruitName.addEventListener("mousemove", (details) => {
-  gsap.to("#page-3 #banana-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    x: `${details.x - 90}`,
-    y: `${details.y - 300}`,
-    duration: 1.5,
-  });
-});
-
-fruitName.addEventListener("mouseleave", () => {
-  document.querySelector(".banana-card").style.opacity = "0";
-});
-
-fruitName.addEventListener("mousemove", (details) => {
-  gsap.to("#page-3 #pineapple-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    x: `${details.x - 90}`,
-    y: `${details.y - 300}`,
-    duration: 1.5,
-  });
-});
-
-fruitName.addEventListener("mouseleave", () => {
-  gsap.to("#page-3 #pineapple-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    duration: 0.5,
-  });
-});
-
-fruitName.addEventListener("mousemove", (details) => {
-  gsap.to("#page-3 #pithaya-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    x: `${details.x - 90}`,
-    y: `${details.y - 290}`,
-    duration: 1.5,
-  });
-});
-
-fruitName.addEventListener("mouseleave", () => {
-  gsap.to("#page-3 #pithaya-card", {
-    opacity: 1, // Adjust the properties as needed
-    ease: Expo.easeInOut,
-    duration: 0.5,
-  });
-});
-// gsap.to("#page-3 .card .fruit-name", {
-//   opacity: 1, // Adjust the properties as needed
-//   ease: Expo.easeInOut,
-// });

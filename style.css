@@ -272,6 +272,13 @@ body {
   opacity: 1;
 }
 
+.card-hover {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3rem;
+}
+
 .card {
   height: 300px;
   width: 250px;

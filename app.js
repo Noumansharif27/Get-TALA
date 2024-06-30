@@ -222,25 +222,55 @@ gsap.to("#line-div", {
   },
 });
 
+gsap.from("#page-4 h1", {
+  y: "60",
+  x: "0",
+  ease: Expo.easeInOut,
+  duration: 1.5,
+  scrollTrigger: {
+    trigger: "#page-4 h1",
+    scroller: "body",
+  },
+});
+
 const cardHovers = document.querySelectorAll(".card-hover");
 
-cardHovers.forEach((cardHover) => {
-  const fruitName = cardHover.querySelector(".fruit-name").textContent; // Get fruit name
-  const correspondingCard = document.getElementById(`${fruitName}-card`); // Find corresponding card
+// cardHovers.forEach((cardHover) => {
+//   const fruitName = cardHover.querySelector(".fruit-name").textContent; // Get fruit name
+//   const correspondingCard = document.getElementById(`${fruitName}-card`); // Find corresponding card
 
-  cardHover.addEventListener("mousemove", (event) => {
-    // Calculate relative position within card-hover
-    const relativeX = event.clientX - cardHover.offsetLeft;
-    const relativeY = event.clientY - cardHover.offsetTop;
+//   cardHover.addEventListener("mousemove", (event) => {
+//     // Calculate relative position within card-hover
+//     const relativeX = event.clientX - cardHover.offsetLeft;
+//     const relativeY = event.clientY - cardHover.offsetTop;
 
-    // Set corresponding card position based on cursor position
-    correspondingCard.style.opacity = 1; // Show the card
-    correspondingCard.style.transform = `translate(${relativeX - 190}px, ${
-      relativeY - 390
-    }px)`; // Follow cursor
-  });
+//     // Set corresponding card position based on cursor position
+//     correspondingCard.style.opacity = 1; // Show the card
+//     correspondingCard.style.transform = `translate(${relativeX - 190}px, ${
+//       relativeY - 390
+//     }px)`; // Follow cursor
+//   });
 
-  cardHover.addEventListener("mouseleave", () => {
-    correspondingCard.style.opacity = 0; // Hide the card on leave
-  });
+//   cardHover.addEventListener("mouseleave", () => {
+//     correspondingCard.style.opacity = 0; // Hide the card on leave
+//   });
+// });
+
+// Trying eventBubbling to solve the issue
+// const products = document.querySelectorAll("#products");
+// products.forEach((el, index) => {
+//   console.log(index);
+//   try {
+//     let id = index;
+//     id.style.color = "yellow";
+//   } catch (e) {
+//     console.log(e);
+//   }
+// });
+
+var pithayacard = document.querySelector("#pithaya-card");
+document.querySelector("#2 h1").addEventListener("mouseenter", function (dets) {
+  pithayacard.style.opacity = 1;
+  pithayacard.style.transform = `translate(-50%,-50%) rotate(20deg)`;
+  pithayacard.style.left = `40%`;
 });

@@ -40,52 +40,36 @@ function smoothScroll() {
 
 smoothScroll();
 
-let menuIcon = document.querySelector("#icon");
-let line1 = document.querySelector("#icon #line-1");
-let line2 = document.querySelector("#icon #line-2");
+// let menuIcon = document.querySelector("#icon");
+// let line1 = document.querySelector("#icon #line-1");
+// let line2 = document.querySelector("#icon #line-2");
 
-let topMenu = document.querySelector("#top-menu");
-let h1 = document.querySelector("#nav-bar h1");
-let h2 = document.querySelector("#nav-options h2");
+// let topMenu = document.querySelector("#top-menu");
+// let h1 = document.querySelector("#nav-bar h1");
+// let h2 = document.querySelector("#nav-options h2");
 
 let flag = 0;
 
+const topMenu = document.querySelector("#top-menu");
+const h1 = document.querySelector("#nav-bar h1");
+const h2 = document.querySelector("#nav-options h2");
+const line1 = document.querySelector("#icon #line-1");
+const line2 = document.querySelector("#icon #line-2");
 menuIcon.addEventListener("click", () => {
-  if (flag == 0) {
-    topMenu.style.top = "0%";
+  const isOpen = topMenu.style.top === "0%";
 
-    h1.style.color = "#2b2b2b";
-    h2.style.color = "#2b2b2b";
-    line1.style.backgroundColor = "#2b2b2b";
-    line2.style.backgroundColor = "#2b2b2b";
-    line1.style.width = "1.3rem";
-    line2.style.width = "1.3rem";
-
-    line2.style.transform = "rotate(-45deg)";
-    line1.style.transform = "rotate(45deg)";
-    menuIcon.style.justifyContent = "sapce-evnely";
-    menuIcon.style.display = "block";
-
-    flag = 1;
-  } else {
-    topMenu.style.top = "-100vh";
-
-    h1.style.color = "#dadada";
-    h2.style.color = "#dadada";
-
-    line2.style.width = "3vh";
-    line1.style.width = "1.75rem";
-
-    line1.style.backgroundColor = "#cecece";
-    line2.style.backgroundColor = "#cecece";
-    line2.style.transform = "rotate(00deg)";
-    line1.style.transform = "rotate(00deg)";
-    menuIcon.style.display = "flex";
-    menuIcon.style.flexDirection = "column";
-    menuIcon.style.justifyContent = "sapce-between";
-
-    flag = 0;
-  }
+  topMenu.style.top = isOpen ? "-100vh" : "0%";
+  h1.style.color = isOpen ? "#dadada" : "#2b2b2b";
+  h2.style.color = isOpen ? "#dadada" : "#2b2b2b";
+  line1.style.backgroundColor = isOpen ? "#cecece" : "#2b2b2b";
+  line2.style.backgroundColor = isOpen ? "#cecece" : "#2b2b2b";
+  line1.style.width = isOpen ? "1.75rem" : "1.3rem";
+  line2.style.width = isOpen ? "3vh" : "1.3rem";
+  line2.style.transform = isOpen ? "rotate(00deg)" : "rotate(-45deg)";
+  line1.style.transform = isOpen ? "rotate(00deg)" : "rotate(45deg)";
+  menuIcon.style.justifyContent = isOpen ? "sapce-between" : "sapce-evnely";
+  menuIcon.style.display = isOpen ? "flex" : "block";
+  menuIcon.style.flexDirection = isOpen ? "column" : "column";
 });
 
 let tl = gsap.timeline();
@@ -231,46 +215,4 @@ gsap.from("#page-4 h1", {
     trigger: "#page-4 h1",
     scroller: "body",
   },
-});
-
-const cardHovers = document.querySelectorAll(".card-hover");
-
-// cardHovers.forEach((cardHover) => {
-//   const fruitName = cardHover.querySelector(".fruit-name").textContent; // Get fruit name
-//   const correspondingCard = document.getElementById(`${fruitName}-card`); // Find corresponding card
-
-//   cardHover.addEventListener("mousemove", (event) => {
-//     // Calculate relative position within card-hover
-//     const relativeX = event.clientX - cardHover.offsetLeft;
-//     const relativeY = event.clientY - cardHover.offsetTop;
-
-//     // Set corresponding card position based on cursor position
-//     correspondingCard.style.opacity = 1; // Show the card
-//     correspondingCard.style.transform = `translate(${relativeX - 190}px, ${
-//       relativeY - 390
-//     }px)`; // Follow cursor
-//   });
-
-//   cardHover.addEventListener("mouseleave", () => {
-//     correspondingCard.style.opacity = 0; // Hide the card on leave
-//   });
-// });
-
-// Trying eventBubbling to solve the issue
-// const products = document.querySelectorAll("#products");
-// products.forEach((el, index) => {
-//   console.log(index);
-//   try {
-//     let id = index;
-//     id.style.color = "yellow";
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
-
-var pithayacard = document.querySelector("#pithaya-card");
-document.querySelector("#2 h1").addEventListener("mouseenter", function (dets) {
-  pithayacard.style.opacity = 1;
-  pithayacard.style.transform = `translate(-50%,-50%) rotate(20deg)`;
-  pithayacard.style.left = `40%`;
 });

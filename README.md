@@ -15,12 +15,3 @@ This is a single-page website that utilizes various libraries and frameworks to 
   - Interactive product details revealed on hover
 
 **Overall, this project demonstrates the effective use of JavaScript libraries to create a visually captivating and interactive single-page website that enhances user experience.**
-
-**Getting Started (Optional):**
-
-- Include instructions here if your project requires specific setup or dependencies to run locally.
-
-**Feel free to modify this template to include any additional details specific to your project, such as:**
-
-- Links to any relevant documentation or tutorials used
-- A brief explanation of the website's purpose or theme

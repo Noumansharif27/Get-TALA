@@ -35,7 +35,7 @@ function smoothScroll() {
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-  ScrollTrigger.refresh();
+  // ScrollTrigger.refresh();
 }
 
 smoothScroll();
@@ -55,6 +55,8 @@ const h1 = document.querySelector("#nav-bar h1");
 const h2 = document.querySelector("#nav-options h2");
 const line1 = document.querySelector("#icon #line-1");
 const line2 = document.querySelector("#icon #line-2");
+const menuIcon = document.querySelector("#icon");
+
 menuIcon.addEventListener("click", () => {
   const isOpen = topMenu.style.top === "0%";
 
@@ -193,10 +195,34 @@ gsap.to("#page-5 img", {
   repeat: -1, // Infinite the animation
 });
 
+// gsap.to("#line-div", {
+//   width: "85vw", // Target width
+//   duration: 12, // Increased duration for slower animation
+//   ease: Expo.inOut, // Easing function for smooth start and end
+//   scrollTrigger: {
+//     trigger: "#page-3 #line-div",
+//     scroller: "#main",
+//     scrub: true, // Link animation progress to scrolling
+//     // start: "top top",
+//     // end: "top top",
+//   },
+// });
+
+// gsap.from("#page-4 h1", {
+//   y: "60",
+//   x: "0",
+//   ease: Expo.easeInOut,
+//   duration: 1.5,
+//   scrollTrigger: {
+//     trigger: "#page-4 h1",
+//     scroller: "body",
+//   },
+// });
+
 gsap.to("#line-div", {
   width: "85vw", // Target width
   duration: 12, // Increased duration for slower animation
-  ease: Expo.inOut, // Easing function for smooth start and end
+  ease: "power2.inOut", // Easing function for smooth start and end
   scrollTrigger: {
     trigger: "#page-3 #line-div",
     scroller: "#main",
@@ -209,10 +235,10 @@ gsap.to("#line-div", {
 gsap.from("#page-4 h1", {
   y: "60",
   x: "0",
-  ease: Expo.easeInOut,
+  ease: "power2.inOut",
   duration: 1.5,
   scrollTrigger: {
     trigger: "#page-4 h1",
-    scroller: "body",
+    scroller: "#main",
   },
 });
